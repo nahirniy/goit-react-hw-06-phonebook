@@ -1,17 +1,16 @@
-import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addContact } from '../../redux/contactsSlice';
 import css from './ContactForm.module.css';
 
-export const ContactForm = ({ addContact }) => {
-  const [dataContact, setDataContact] = useState({ name: '', number: '' });
-
-  const handleChange = ({ target: { name, value } }) => {
-    setDataContact({ ...dataContact, [name]: value });
-  };
+export const ContactForm = () => {
+  const dispatch = useDispatch();
 
   const handleSubmit = e => {
     e.preventDefault();
 
-    addContact({ ...dataContact });
+    const { name, number } = e.target.elements;
+
+    dispatch(addContact({ name: name.value, number: number.value }));
 
     e.target.reset();
   };
@@ -20,25 +19,11 @@ export const ContactForm = ({ addContact }) => {
     <form className={css.form} onSubmit={handleSubmit}>
       <label htmlFor="name" className={css.label}>
         Name
-        <input
-          className={css.input}
-          type="text"
-          name="name"
-          id="name"
-          required
-          onChange={handleChange}
-        />
+        <input className={css.input} type="text" name="name" id="name" required />
       </label>
       <label htmlFor="number" className={css.label}>
         Number
-        <input
-          className={css.input}
-          type="tel"
-          name="number"
-          id="number"
-          required
-          onChange={handleChange}
-        />
+        <input className={css.input} type="tel" name="number" id="number" required />
       </label>
       <button className={css.btn} type="submit">
         Add contact
