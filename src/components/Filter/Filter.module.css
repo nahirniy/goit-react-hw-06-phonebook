@@ -1,0 +1,23 @@
+.label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.input {
+  outline: none;
+  border: 1px solid gray;
+  border-radius: 2px;
+  padding: 5px 10px;
+  font-size: 16px;
+  transition: all ease-in-out 300ms;
+  max-width: 100px;
+}
+.input:hover {
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.input:focus {
+  border: 1px solid rgb(63, 92, 21);
+  box-shadow: unset;
+}

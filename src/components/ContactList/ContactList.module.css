@@ -1,0 +1,7 @@
+.contact_list {
+  text-transform: capitalize;
+  list-style: inside;
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+}

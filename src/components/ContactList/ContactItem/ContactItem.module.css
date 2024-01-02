@@ -1,0 +1,20 @@
+.item {
+  white-space: nowrap;
+}
+
+.btn {
+  border: none;
+  background-color: red;
+  padding: 5px 10px;
+  color: white;
+  border-radius: 2px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all ease-in-out 300ms;
+  cursor: pointer;
+  text-transform: capitalize;
+  margin-left: 10px;
+}
+
+.btn:hover {
+  scale: 1.05;
+}
